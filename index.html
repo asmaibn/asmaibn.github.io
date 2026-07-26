@@ -13,6 +13,27 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <canvas id="sparkleCanvas" aria-hidden="true"></canvas>
+
+  <div class="ambient-butterfly" aria-hidden="true">
+    <svg class="ambient-butterfly__svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <g class="ambient-butterfly__wing ambient-butterfly__wing--right">
+        <path fill="var(--accent)" d="M266.298,313.842c0,0,51.495,164.781,122.115,129.471c0,0,35.31,8.828,44.138-26.483c0,0,26.483,0,26.483-35.31c0,0,26.483-8.828,17.655-44.138c0,0,38.253-35.31-80.184-97.839l-131.678,0.736L266.298,313.842z"></path>
+        <path fill="var(--accent-dark)" d="M301.76,393.27c-22.227-37.143-35.46-79.428-35.46-79.428l-1.472-73.564l131.678-0.736c22.382,11.817,39.154,22.658,51.659,32.476c-19.908,45.301-77.406,14.268-77.406,65.364C370.759,379.803,331.148,393.87,301.76,393.27z"></path>
+        <path fill="var(--accent-light)" d="M379.586,240.278v-0.641l16.919-0.095c22.382,11.817,39.154,22.658,51.659,32.476c-10.435,23.744-31.161,26.537-48.557,31.157C407.682,284.601,405.878,259.997,379.586,240.278z"></path>
+        <path fill="var(--accent)" d="M476.69,63.727c12.868,0,35.31,8.828,35.31,44.138s0,105.931-26.483,123.586s-88.276,17.655-132.414,17.655s-88.276-8.828-88.276-8.828v-8.828C264.828,231.451,344.276,63.727,476.69,63.727z"></path>
+      </g>
+      <g class="ambient-butterfly__wing ambient-butterfly__wing--left">
+        <path fill="var(--accent)" d="M245.702,313.842c0,0-51.495,164.781-122.115,129.471c0,0-35.31,8.828-44.138-26.483c0,0-26.483,0-26.483-35.31c0,0-26.483-8.828-17.655-44.138c0,0-38.253-35.31,80.184-97.839l131.678,0.736L245.702,313.842z"></path>
+        <path fill="var(--accent-dark)" d="M210.24,393.27c22.227-37.143,35.46-79.428,35.46-79.428l1.472-73.564l-131.678-0.736c-22.382,11.817-39.154,22.658-51.659,32.476c19.908,45.301,77.406,14.268,77.406,65.364C141.241,379.803,180.852,393.87,210.24,393.27z"></path>
+        <path fill="var(--accent-light)" d="M132.414,240.278v-0.641l-16.919-0.095c-22.382,11.817-39.154,22.658-51.659,32.476c10.435,23.744,31.161,26.537,48.557,31.157C104.318,284.601,106.122,259.997,132.414,240.278z"></path>
+        <path fill="var(--accent)" d="M35.31,63.727C22.442,63.727,0,72.554,0,107.865s0,105.931,26.483,123.586s88.276,17.655,132.414,17.655s88.276-8.828,88.276-8.828v-8.828C247.172,231.451,167.724,63.727,35.31,63.727z"></path>
+      </g>
+      <path fill="var(--accent-dark)" d="M256,231.451c-2.44,0-4.414-1.974-4.414-4.414c0-17.038-17.992-60.301-42.845-85.155 c-1.725-1.725-1.725-4.518,0-6.241c1.725-1.724,4.518-1.725,6.241,0c19.561,19.561,34.13,47.672,41.017,69.121 c6.888-21.449,21.457-49.56,41.017-69.121c1.725-1.725,4.518-1.725,6.241,0c1.724,1.725,1.725,4.518,0,6.241 c-24.853,24.854-42.845,68.117-42.845,85.155C260.414,229.477,258.44,231.451,256,231.451z"></path>
+      <path fill="var(--clr-text)" d="M256,346.209L256,346.209c-9.751,0-17.655-7.904-17.655-17.655v-97.103 c0-9.751,7.904-17.655,17.655-17.655l0,0c9.751,0,17.655,7.904,17.655,17.655v97.103C273.655,338.305,265.751,346.209,256,346.209z"></path>
+    </svg>
+  </div>
  
   <header class="site-header">
     <nav class="nav container">
@@ -36,21 +57,35 @@
     <section id="home" class="hero">
       <div class="container hero__inner">
 
-        <p class="hero__eyebrow">Hello, I'm Asma</p>
+        <div class="hero__text">
+          <p class="hero__eyebrow">Hello, I'm Asma</p>
 
-        <h1 class="hero__name">Asma ibn elaasri</h1>
+          <h1 class="hero__name">Asma ibn      elaasri</h1>
  
-        <p class="hero__tagline">
-          A passionate beginner front-end developer who loves turning ideas
-          into clean, accessible web experiences.
-        </p>
+          <p class="hero__tagline">
+            A passionate beginner front-end developer who loves turning ideas
+            into clean, accessible web experiences.
+          </p>
 
-        <div class="hero__cta">
-          <a href="#projects" class="btn btn--primary">View My Work</a>
-          <a href="#contact" class="btn btn--outline">Get In Touch</a>
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">View My Work</a>
+            <a href="#contact" class="btn btn--outline">Get In Touch</a>
+          </div>
+        </div>
+
+        <div class="hero__cube-stage">
+          <div class="hero__cube-wrap" aria-hidden="true">
+            <div class="hero__cube">
+              <span class="hero__cube-face hero__cube-face--front"></span>
+              <span class="hero__cube-face hero__cube-face--back"></span>
+              <span class="hero__cube-face hero__cube-face--top"></span>
+              <span class="hero__cube-face hero__cube-face--bottom"></span>
+              <span class="hero__cube-face hero__cube-face--left"></span>
+              <span class="hero__cube-face hero__cube-face--right"></span>
+            </div>
+          </div>
         </div>
  
-
         <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
         <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
       </div>
@@ -61,7 +96,7 @@
       <div class="container about__inner">
 
         <div class="about__photo">              
-          <img src="ana.jpeg"
+          <img src="ana1.jpeg"
                alt="Photo of Asma"
                width="360" height="420" />
         </div>
@@ -70,19 +105,19 @@
           <h2 class="section__title">About Me</h2>
  
           <p>
-            Hi there! I'm a self-taught front-end developer based in
-            <strong>Morocco</strong>. I discovered my love for
-            web development when I built my first webpage and couldn't stop
-            tweaking it until it looked just right.
+            Hey! I'm a front-end developer based in <strong>Morocco</strong>.
+            I first got into coding in school, then kept going on my own
+            afterward — building random pages just to see if I could, until
+            it turned into something I actually wanted to get good at.
           </p>
           <p>
-            Alongside coding, I enjoy <strong>digital drawing</strong> — a
-            creative outlet that sharpens my eye for colour, composition, and
-            detail, all of which I bring into my design work.
+            Since then I've taken on freelance client work, building custom
+            sites from scratch instead of using templates, because I like
+            when a site actually looks and feels like the brand behind it.
           </p>
           <p>
-            I'm currently focused on growing my HTML, CSS, and JavaScript
-            skills while building a portfolio I'm proud of.
+            Right now I'm sharpening my HTML, CSS, and JavaScript skills and
+            building out projects I'm genuinely proud to show.
           </p>
  
 
@@ -99,7 +134,7 @@
         <p class="section__subtitle">
           Technologies and tools I work with
         </p>
- 
+
         <ul class="skills__grid" role="list">
 
           <li class="skill-card">
@@ -148,22 +183,6 @@
             </div>
           </li>
  
-          <li class="skill-card">
-            <div class="skill-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="24" cy="24" r="20" fill="var(--accent)"/>
-                <path d="M30 14l4 4-16 16-5 1 1-5 16-16z" fill="#fff"/>
-                <path d="M30 14l4 4-3 3-4-4 3-3z" fill="var(--accent-dark)"/>
-              </svg>
-            </div>
-            <h3 class="skill-card__name">Digital Drawing</h3>>
-            <p class="skill-card__level">Intermediate · 70%</p>
-            <div class="skill-card__bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-              <div class="skill-card__fill" style="--pct: 70%"></div>
-            </div>
-          </li>
-
- 
         </ul>
       </div>
     </section>
@@ -179,7 +198,7 @@
  
           <article class="project-card">
             <div class="project-card__image">
-              <img src="Capture d'écran 2026-05-26 150537.png"
+              <img src="lumicanvas.png"
                    alt="Screenshot of LumiCanvas" />
             </div>
             <div class="project-card__body">
@@ -193,50 +212,55 @@
                 <li>JavaScript</li>
               </ul>
               <div class="project-card__links">
-                <a href="#" class="btn btn--sm btn--primary" target="_blank" rel="noopener">Live Demo</a>
-                <a href="#" class="btn btn--sm btn--outline" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://capable-sawine-95c8a1.netlify.app/" class="btn btn--sm btn--primary" target="_blank" rel="noopener">Live Demo</a>
+                <a href="https://github.com/asmaibn" class="btn btn--sm btn--outline" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
           </article>
  
           <article class="project-card">
             <div class="project-card__image">
-              <img src="Capture d'écran 2026-05-26 160815.png"
-                   alt="Screenshot of Parlablush" />
+              <img src="lunar.png"
+                   alt="Screenshot of Lunar Jewels" />
             </div>
             <div class="project-card__body">
-              <h3 class="project-card__title">Parlablush ✦</h3>
+              <h3 class="project-card__title">Lunar Jewels ✦</h3>
               <p class="project-card__desc">
-                Parlablush ✦ is an aesthetic, beginner-friendly language learning website designed with a soft “Princess Bubblegum” inspired theme. It features a cute and interactive sign-up homepage with form validation, smooth animations, and playful UI feedback to guide users through creating an account. Built using HTML, CSS, and JavaScript, the project focuses on combining functionality with a visually charming, immersive design experience.
+                Lunar Jewels is a retro Y2K-inspired jewelry e-commerce site built for a client, featuring pixel-art accents, Press Start 2P and VT323 fonts, and variant selectors for bracelet groups. It includes a full multi-page shop layout with a cart-to-Instagram checkout flow, letting customers browse products and complete orders directly through Instagram DMs.
               </p>
               <ul class="project-card__tags" role="list">
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>JavaScript</li>
+                <li>Client Project</li>
               </ul>
               <div class="project-card__links">
-                <a href="#" class="btn btn--sm btn--primary" target="_blank" rel="noopener">Live Demo</a>
-                <a href="#" class="btn btn--sm btn--outline" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://lunarjwls.netlify.app/" class="btn btn--sm btn--primary" target="_blank" rel="noopener">Live Demo</a>
+                <a href="https://github.com/asmaibn" class="btn btn--sm btn--outline" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
           </article>
- 
+
           <article class="project-card">
             <div class="project-card__image">
-              <img src="https://placehold.co/600x340/f9e4c5/966a1d?text=Project+Screenshot"
-                   alt="Screenshot of Project Three" />
+              <img src="sewreloved.png"
+                   alt="Screenshot of Sew Reloved by Angi" />
             </div>
             <div class="project-card__body">
-              <h3 class="project-card__title">Coming Soon ✦</h3>
+              <h3 class="project-card__title">Sew Reloved by Angi ✦</h3>
               <p class="project-card__desc">
-                coming Soon
+                Sew Reloved by Angi is a cottagecore-styled e-commerce site built for a handmade baby items shop. It includes a client-side account system, a fabric swatch–to–order form flow, a conditional custom order modal, Stripe Payment Links for gallery items, and a manual quote flow for custom orders — designed to feel warm, handmade, and personal.
               </p>
               <ul class="project-card__tags" role="list">
-                <li>Coming Soon</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Stripe</li>
+                <li>Client Project</li>
               </ul>
               <div class="project-card__links">
-                <a href="#" class="btn btn--sm btn--primary" target="_blank" rel="noopener">Live Demo</a>
-                <a href="#" class="btn btn--sm btn--outline" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://sewrelovedbyangi.netlify.app/" class="btn btn--sm btn--primary" target="_blank" rel="noopener">Live Demo</a>
+                <a href="https://github.com/asmaibn" class="btn btn--sm btn--outline" target="_blank" rel="noopener">GitHub</a>
               </div>
             </div>
           </article>
@@ -282,7 +306,7 @@
  
         <ul class="contact__socials" role="list">
           <li><a href="mailto:asmacupcake8@gmail.com" aria-label="Email">✉ Email</a></li>
-          <li><a href="#" target="_blank" rel="noopener" aria-label="GitHub">⌥ GitHub</a></li>
+          <li><a href="https://github.com/asmaibn" target="_blank" rel="noopener" aria-label="GitHub">⌥ GitHub</a></li>
         </ul>
  
       </div>
